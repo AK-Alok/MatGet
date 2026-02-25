@@ -1,16 +1,7 @@
 # MatGet
 
 It is a Construction Material Delivery Platform.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<br>
+MatGet” is an innovative startup designed to simplify the construction material supply chain. It is a digital platform (mobile app + website) that connects local material suppliers directly with customers (individual homeowners, contractors, small builders).
+<br>
+Doorstep delivery with focus on timely and reliable logistics.
