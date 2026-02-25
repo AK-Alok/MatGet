@@ -1,6 +1,6 @@
 # matget
 
-A new Flutter project.
+It is a Construction Material Delivery Platform.
 
 ## Getting Started
 
