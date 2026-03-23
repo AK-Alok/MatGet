@@ -135,11 +135,11 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildCategory("Bricks", "assets/images/bricks1.jpg"),
-                  _buildCategory("Sand", "assets/images/sand1.avif"),                  
-                  _buildCategory("Cement", "assets/images/cement1.jpg"),
-                  _buildCategory("TMT Bar", "assets/images/steel2.jpg"),
-                  _buildCategory("Gravel", "assets/images/gravel1.jpg"),
+                  _buildCategory("Bricks", "assets/images/Bricks1.png"),
+                  _buildCategory("Sand", "assets/images/sand1.png"),                  
+                  _buildCategory("Cement", "assets/images/Cement1.png"),
+                  _buildCategory("TMT Bar", "assets/images/Steel1.png"),
+                  _buildCategory("Gravel", "assets/images/gravel1.png"),
                 ],
               ),
 
@@ -287,11 +287,12 @@ class HomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(14), // corner radius
+            border: BoxBorder.all(color: Colors.grey[400]!, width: 0.2),
             boxShadow: [
               BoxShadow(
                 color: Colors.black12,
-                blurRadius: 6,
-                offset: Offset(0, 5),
+                blurRadius: 2,
+                offset: Offset(0, 2),
               ),
             ],
           ),
