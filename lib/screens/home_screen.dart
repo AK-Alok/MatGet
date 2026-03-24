@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/productdetailpage.dart';
+import 'package:matget/screens/shop_details_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Deliver to",
-                            style: TextStyle(color: const Color.fromARGB(255, 108, 108, 108), fontSize: 14),
+                            style: TextStyle(color: const Color.fromARGB(255, 108, 108, 108), fontSize: 12),
                           ),
                           Row(
                             children: [
@@ -238,6 +239,23 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 12),
 
+              InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ShopDetailsPage(),
+                          ),
+                        );
+                      },
+                      splashColor: Colors.black12,
+                      highlightColor: Colors.black12,
+                      hoverColor: Colors.black12,
+                      borderRadius: BorderRadius.circular(12),
+                      child: _buildShopCard(),
+                    ),
+                    
+              SizedBox(height: 12),
               _buildShopCard(),
               SizedBox(height: 12),
               _buildShopCard(),
@@ -250,29 +268,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-
-      // BOTTOM NAVIGATION BAR
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: 0,
-        selectedItemColor: Color(0xffff7d3b),
-        unselectedItemColor: Colors.grey[600],
-        showUnselectedLabels: true,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: "Orders"),
-          BottomNavigationBarItem(icon: Icon(Icons.fire_truck), label: "Track"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: "Cart",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-          ),
-        ],
       ),
     );
   }
