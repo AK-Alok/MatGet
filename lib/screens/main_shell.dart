@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/home_screen.dart';
+import 'package:matget/screens/order_history_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -14,7 +15,7 @@ class _MainShellState extends State<MainShell> {
   // Add all your pages here in order
   final List<Widget> _pages = const [
     HomeScreen(),           // index 0 → Home
-    // OrderHistoryPage(),   // index 1 → History
+    OrderHistoryPage(),   // index 1 → History
     // TrackPage(),          // index 2 → Track
     // CartPage(),           // index 3 → Cart
     // ProfilePage(),        // index 4 → Profile
@@ -29,6 +30,7 @@ class _MainShellState extends State<MainShell> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),
         selectedItemColor: const Color(0xFFE8541A),

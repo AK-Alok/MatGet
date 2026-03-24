@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matget/screens/home_screen.dart';
 import 'package:matget/screens/getstarted_screen.dart';
+import 'package:matget/screens/main_shell.dart';
 
 bool rememberMe = false;
 
@@ -205,7 +205,7 @@ class MatGetLogin extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (_) => HomeScreen()),
+                      MaterialPageRoute(builder: (_) => MainShell()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
