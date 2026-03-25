@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:matget/screens/login_screen.dart';
+import 'package:matget/screens/main_shell.dart';
+import 'package:matget/screens/order_history_screen.dart';
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 class _AppColors {
@@ -23,6 +25,7 @@ class _MenuItem {
   final String subtitle;
   final int? badge;
   final bool isDestructive;
+  final bool isOrder;
 
   const _MenuItem({
     required this.icon,
@@ -30,6 +33,7 @@ class _MenuItem {
     required this.subtitle,
     this.badge,
     this.isDestructive = false,
+    this.isOrder = false,
   });
 }
 
@@ -43,12 +47,13 @@ class ProfilePage extends StatelessWidget {
       icon: Icons.history_outlined,
       title: 'Order History',
       subtitle: 'View past deliveries',
+      isOrder: true,
     ),
     _MenuItem(
       icon: Icons.location_on_outlined,
       title: 'Delivery Addresses',
       subtitle: 'Manage saved locations',
-      badge: 3,
+      badge: 1,
     ),
     _MenuItem(
       icon: Icons.credit_card_outlined,
@@ -87,7 +92,10 @@ class ProfilePage extends StatelessWidget {
         elevation: 0.5,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: _AppColors.textDark),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => MainShell()),
+          ),
         ),
         title: const Text(
           'Profile',
@@ -151,7 +159,10 @@ class ProfilePage extends StatelessWidget {
                       shape: BoxShape.circle,
                       border: Border.all(color: _AppColors.divider, width: 2),
                     ),
-                    child: const Icon(Icons.person, color: Colors.white, size: 40),
+                    child: Image.asset(
+                      "assets/images/profile.png",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   // Camera edit button
                   Positioned(
@@ -164,7 +175,11 @@ class ProfilePage extends StatelessWidget {
                         color: _AppColors.primary,
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.camera_alt, color: Colors.white, size: 12),
+                      child: const Icon(
+                        Icons.camera_alt,
+                        color: Colors.white,
+                        size: 12,
+                      ),
                     ),
                   ),
                 ],
@@ -175,7 +190,7 @@ class ProfilePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Marcus Johnson',
+                      'Alok Kumar',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -185,12 +200,19 @@ class ProfilePage extends StatelessWidget {
                     const SizedBox(height: 3),
                     const Text(
                       'Construction Manager',
-                      style: TextStyle(fontSize: 13, color: _AppColors.textGrey),
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: _AppColors.textGrey,
+                      ),
                     ),
                     const SizedBox(height: 5),
                     Row(
                       children: const [
-                        Icon(Icons.star, color: _AppColors.starYellow, size: 15),
+                        Icon(
+                          Icons.star,
+                          color: _AppColors.starYellow,
+                          size: 15,
+                        ),
                         SizedBox(width: 4),
                         Text(
                           '4.8 Customer Rating',
@@ -216,14 +238,14 @@ class ProfilePage extends StatelessWidget {
           _ContactRow(
             icon: Icons.phone_outlined,
             label: 'Phone',
-            value: '+1 (555) 123-4567',
+            value: '+91 5436441684',
           ),
           const SizedBox(height: 12),
           // Email
           _ContactRow(
             icon: Icons.email_outlined,
             label: 'Email',
-            value: 'marcus.j@construction.com',
+            value: 'alok.kumar@matget.com',
           ),
         ],
       ),
@@ -250,9 +272,13 @@ class ProfilePage extends StatelessWidget {
           children: [
             _StatCell(value: '47', label: 'Total Orders', isHighlighted: false),
             _VerticalDivider(),
-            _StatCell(value: '\$12.5k', label: 'Total Spent', isHighlighted: true),
+            _StatCell(
+              value: '\₹12.5k',
+              label: 'Total Spent',
+              isHighlighted: true,
+            ),
             _VerticalDivider(),
-            _StatCell(value: '3', label: 'Addresses', isHighlighted: false),
+            _StatCell(value: '1', label: 'Addresses', isHighlighted: false),
           ],
         ),
       ),
@@ -280,10 +306,7 @@ class ProfilePage extends StatelessWidget {
           final isLast = i == _menuItems.length - 1;
           return Column(
             children: [
-              _MenuTile(
-                item: item,
-                onTap: () => _onMenuTap(context, item),
-              ),
+              _MenuTile(item: item, onTap: () => _onMenuTap(context, item)),
               if (!isLast)
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
@@ -299,6 +322,12 @@ class ProfilePage extends StatelessWidget {
   void _onMenuTap(BuildContext context, _MenuItem item) {
     if (item.isDestructive) {
       _showSignOutDialog(context);
+    }
+    if (item.isOrder) {
+       Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => OrderHistoryPage()),
+      );
     }
     // Navigate to respective pages as needed
   }
@@ -319,11 +348,22 @@ class ProfilePage extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel', style: TextStyle(color: _AppColors.textGrey)),
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: _AppColors.textGrey),
+            ),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Sign Out', style: TextStyle(color: _AppColors.red)),
+            onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => MatGetLogin(),
+                          ),
+                        ),
+            child: const Text(
+              'Sign Out',
+              style: TextStyle(color: _AppColors.red),
+            ),
           ),
         ],
       ),
@@ -335,7 +375,7 @@ class ProfilePage extends StatelessWidget {
   Widget _buildVersionTag() {
     return const Center(
       child: Text(
-        'BuildMate Delivery v2.1.4',
+        'MatGet v2.1.4',
         style: TextStyle(fontSize: 12, color: _AppColors.textLight),
       ),
     );
@@ -438,10 +478,7 @@ class _StatCell extends StatelessWidget {
 class _VerticalDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1,
-      color: _AppColors.divider,
-    );
+    return Container(width: 1, color: _AppColors.divider);
   }
 }
 
@@ -486,13 +523,18 @@ class _MenuTile extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: item.isDestructive ? _AppColors.red : _AppColors.textDark,
+                      color: item.isDestructive
+                          ? _AppColors.red
+                          : _AppColors.textDark,
                     ),
                   ),
                   const SizedBox(height: 2),
                   Text(
                     item.subtitle,
-                    style: const TextStyle(fontSize: 12, color: _AppColors.textGrey),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: _AppColors.textGrey,
+                    ),
                   ),
                 ],
               ),

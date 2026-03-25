@@ -32,7 +32,13 @@ class _MainShellState extends State<MainShell> {
         index: _currentIndex,
         children: _pages,
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: Container(
+  decoration: const BoxDecoration(
+    border: Border(
+      top: BorderSide(color: Color(0xFFE5E7EB), width: 1),
+    ),
+  ),
+  child:BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),
@@ -45,7 +51,8 @@ class _MainShellState extends State<MainShell> {
           BottomNavigationBarItem(icon: Icon(Icons.local_shipping_outlined), activeIcon: Icon(Icons.local_shipping), label: 'Track'),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined), activeIcon: Icon(Icons.shopping_cart), label: 'Cart'),
           BottomNavigationBarItem(icon: Icon(Icons.person_outline), activeIcon: Icon(Icons.person), label: 'Profile'),
-        ],
+          ],
+        ),
       ),
     );
   }

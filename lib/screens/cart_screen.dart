@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matget/screens/main_shell.dart';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -56,6 +57,20 @@ class _MyCartPageState extends State<MyCartPage> {
       name: 'TMT Steel Bar',
       subtitle: '12mm, 1 Ton',
       unitPrice: 135.00,
+      quantity: 1,
+    ),
+    CartItem(
+      id: '3',
+      name: 'Gravel',
+      subtitle: '50kg bag',
+      unitPrice: 60.00,
+      quantity: 1,
+    ),
+    CartItem(
+      id: '4',
+      name: 'River Sand',
+      subtitle: '25Kg Bag',
+      unitPrice: 25,
       quantity: 1,
     ),
   ];
@@ -119,7 +134,12 @@ class _MyCartPageState extends State<MyCartPage> {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: _AppColors.textDark),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => MainShell(),
+                          ),
+                        ),
         ),
         title: const Text(
           'My Cart',
@@ -219,9 +239,9 @@ class _MyCartPageState extends State<MyCartPage> {
       ),
       child: Column(
         children: [
-          _PriceRow(label: 'Subtotal', value: '\$${_subtotal.toStringAsFixed(2)}'),
+          _PriceRow(label: 'Subtotal', value: '\₹${_subtotal.toStringAsFixed(2)}'),
           const SizedBox(height: 10),
-          _PriceRow(label: 'Delivery Fee', value: '\$${_deliveryFee.toStringAsFixed(2)}'),
+          _PriceRow(label: 'Delivery Fee', value: '\₹${_deliveryFee.toStringAsFixed(2)}'),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
             child: Divider(height: 1, color: _AppColors.divider),
@@ -238,7 +258,7 @@ class _MyCartPageState extends State<MyCartPage> {
                 ),
               ),
               Text(
-                '\$${_total.toStringAsFixed(2)}',
+                '\₹${_total.toStringAsFixed(2)}',
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
@@ -381,7 +401,7 @@ class _CartItemCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    '\$${item.total.toStringAsFixed(2)}',
+                    '\₹${item.total.toStringAsFixed(2)}',
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w800,

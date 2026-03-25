@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matget/screens/home_screen.dart';
+//import 'package:matget/screens/home_screen.dart';
+import 'package:matget/screens/main_shell.dart';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -72,7 +73,7 @@ class OrderHistoryPage extends StatelessWidget {
           onPressed: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => HomeScreen(),
+                            builder: (_) => MainShell(),
                           ),
                         ),
         ),
@@ -195,7 +196,7 @@ class _OrderCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '\$${order.total.toStringAsFixed(2)}',
+                '\₹ ${order.total.toStringAsFixed(2)}',
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w800,

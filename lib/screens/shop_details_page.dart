@@ -60,7 +60,7 @@ class _ShopDetailsPageState extends State<ShopDetailsPage> {
 
   final List<_Product> _products = const [
     _Product(name: 'Portland Cement 50kg', rating: 4.7, price: 12.50, bgColor: Color(0xFFFFF9C4)),
-    _Product(name: 'Red Clay Bricks (100 pcs)', rating: 4.9, price: 45.00, bgColor: Color(0xFFFFE0B2)),
+    _Product(name: 'Red Bricks (100 pcs)', rating: 4.9, price: 45.00, bgColor: Color(0xFFFFE0B2)),
     _Product(name: 'Steel Rebar (Gr. 60)', rating: 4.6, price: 85.00, bgColor: Color(0xFFE8EAF6)),
   ];
 
@@ -244,8 +244,9 @@ class _ShopDetailsPageState extends State<ShopDetailsPage> {
         children: [
           const Text('Material Categories',
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: _AppColors.textDark)),
-          const SizedBox(height: 16),
-          GridView.builder(
+          Transform.translate(
+                  offset: Offset(0, -12),
+                  child: GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -256,6 +257,7 @@ class _ShopDetailsPageState extends State<ShopDetailsPage> {
             ),
             itemCount: _categories.length,
             itemBuilder: (_, i) => _CategoryTile(category: _categories[i]),
+          ),
           ),
         ],
       ),
@@ -385,7 +387,7 @@ class _ShopDetailsPageState extends State<ShopDetailsPage> {
 
   Widget _buildContact() {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -503,19 +505,19 @@ class _ShopHeroBanner extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            bottom: 0, left: 0, right: 0,
-            child: Container(
-              height: 60,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [Colors.white, Colors.transparent],
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   bottom: 0, left: 0, right: 0,
+          //   child: Container(
+          //     height: 60,
+          //     decoration: const BoxDecoration(
+          //       gradient: LinearGradient(
+          //         begin: Alignment.bottomCenter,
+          //         end: Alignment.topCenter,
+          //         colors: [Colors.white, Colors.transparent],
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -603,7 +605,7 @@ class _ProductCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('\$${product.price.toStringAsFixed(2)}',
+                    Text('\₹${product.price.toStringAsFixed(2)}',
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w700, color: _AppColors.primary)),
                     Container(

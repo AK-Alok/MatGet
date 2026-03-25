@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matget/screens/main_shell.dart';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -63,7 +64,12 @@ class TrackOrderPage extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: _AppColors.textDark),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => MainShell(),
+                          ),
+                        ),
         ),
         title: const Text(
           'Track Order',
