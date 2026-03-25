@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/home_screen.dart';
 import 'package:matget/screens/order_history_screen.dart';
+import 'package:matget/screens/track_order_screen.dart';
+import 'package:matget/screens/cart_screen.dart';
+import 'package:matget/screens/profile_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -16,9 +19,9 @@ class _MainShellState extends State<MainShell> {
   final List<Widget> _pages = const [
     HomeScreen(),           // index 0 → Home
     OrderHistoryPage(),   // index 1 → History
-    // TrackPage(),          // index 2 → Track
-    // CartPage(),           // index 3 → Cart
-    // ProfilePage(),        // index 4 → Profile
+    TrackOrderPage(),          // index 2 → Track
+    MyCartPage(),           // index 3 → Cart
+    ProfilePage(),        // index 4 → Profile
   ];
 
   @override

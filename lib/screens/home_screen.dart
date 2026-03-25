@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matget/screens/productdetailpage.dart';
+import 'package:matget/screens/product_detail_page.dart';
 import 'package:matget/screens/shop_details_page.dart';
 
 class HomeScreen extends StatelessWidget {
