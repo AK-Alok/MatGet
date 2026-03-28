@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/login_screen.dart';
+import 'package:matget/screens/main_shell.dart';
+
+import 'getstarted_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -202,7 +205,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   scale: 0.8,
                   child: Checkbox(
                     value: agreeTerms,
-                    activeColor: Colors.orange,
+                    activeColor: Color(0xFFE8541A),
                     onChanged: (value) {
                       setState(() {
                         agreeTerms = value!;
@@ -219,7 +222,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         TextSpan(
                           text: "Terms and Conditions",
                           style: TextStyle(
-                            color: Colors.orange,
+                            color: Color(0xFFE8541A),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -235,37 +238,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
             // --------------------------
             // CREATE ACCOUNT BUTTON
             // --------------------------
-            GestureDetector(
-              onTapDown: (_) => setState(() {}),
-              onTapUp: (_) => setState(() {}),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 120),
-                curve: Curves.easeOut,
-                width: 300,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                decoration: BoxDecoration(
-                  color: const Color(0xffff7d3b),
-                  borderRadius: BorderRadius.circular(14),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.orange.withOpacity(0.1),
-                      blurRadius: 8,
-                      offset: const Offset(0, 4),
+            PressableButton(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => MainShell()),
+                    );
+                  },
+                  child: Container(
+                    width: 300,
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffff7d3b),
+                      borderRadius: BorderRadius.circular(14),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 3,
+                          offset: const Offset(0, 1),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: const Center(
-                  child: Text(
-                    "Create Account",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    child: const Center(
+                      child: Text(
+                        "Create Account",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
                   ),
-                ),
               ),
-            ),
 
             const SizedBox(height: 25),
 
@@ -292,7 +297,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.orange,
+                      color: Color(0xFFE8541A),
                     ),
                   ),
                 ),

@@ -199,28 +199,38 @@ class MatGetLogin extends StatelessWidget {
               const SizedBox(height: 6),
 
               // Login Button
-              SizedBox(
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: () {
+              PressableButton(
+                  onTap: () {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (_) => MainShell()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    shadowColor: Colors.grey,
+                  child: Container(
+                    width: 200,
                     padding: const EdgeInsets.symmetric(vertical: 15),
-                    backgroundColor: const Color(0xffff7d3b),
-                    shape: RoundedRectangleBorder(
+                    decoration: BoxDecoration(
+                      color: const Color(0xffff7d3b),
                       borderRadius: BorderRadius.circular(14),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 3,
+                          offset: const Offset(0, 1),
+                        ),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Log In",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
                   ),
-                  child: const Text(
-                    "Log In",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ),
               ),
 
               const SizedBox(height: 25),
