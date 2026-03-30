@@ -74,6 +74,18 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       comment:
           'Good product, arrived on time. Packaging could be better but the blocks themselves are solid.',
     ),
+    _Review(
+      name: 'Mike Johnson',
+      rating: 5,
+      comment:
+          'Excellent quality blocks. Used for our foundation project and they exceeded expectations. Fast delivery too!',
+    ),
+    _Review(
+      name: 'Sarah Davis',
+      rating: 4,
+      comment:
+          'Good product, arrived on time. Packaging could be better but the blocks themselves are solid.',
+    ),
   ];
 
   double get _subtotal => _unitPrice * _quantity;
@@ -101,7 +113,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     _buildDeliveryInfo(),
                     _divider(),
                     _buildReviews(),
-                    const SizedBox(height: 100),
+                    const SizedBox(height: 50),
                   ],
                 ),
               ),
@@ -462,7 +474,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               color: _AppColors.textDark,
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 2),
           ...List.generate(_specs.length, (i) {
             final spec = _specs[i];
             return Container(
@@ -659,10 +671,18 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                Icons.location_on_outlined,
-                color: _AppColors.primary,
-                size: 20,
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  color: _AppColors.primaryLight,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(
+                  Icons.location_on,
+                  color: _AppColors.primary,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 10),
               Expanded(
@@ -712,7 +732,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
           // Same Day
           _DeliveryRow(
-            icon: Icons.flash_on_outlined,
+            icon: Icons.flash_on,
             title: 'Same Day Delivery',
             subtitle: 'Order by 2 PM for same day delivery',
           ),
@@ -721,7 +741,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
           // Insured
           _DeliveryRow(
-            icon: Icons.shield_outlined,
+            icon: Icons.shield,
             title: 'Insured Delivery',
             subtitle: 'Full coverage for damage or loss',
           ),
@@ -764,6 +784,36 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           ),
           const SizedBox(height: 14),
           ..._reviews.map((r) => _ReviewCard(review: r)).toList(),
+
+          Container(
+            width: double.infinity,
+            color: Colors.white,
+            padding: EdgeInsets.only(
+              left: 6,
+              right: 6,
+              bottom: MediaQuery.of(context).padding.bottom + 10,
+            ),
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.flash_on, size: 18, color: Colors.white),
+              label: const Text(
+                'Order Now – Same Day Delivery',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 14,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF1A1A2E),
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -844,36 +894,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ],
             ),
           ),
+
           // Order Now
-          Container(
-            width: double.infinity,
-            color: Colors.white,
-            padding: EdgeInsets.only(
-              left: 16,
-              right: 16,
-              bottom: MediaQuery.of(context).padding.bottom + 10,
-            ),
-            child: ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.flash_on, size: 18, color: Colors.white),
-              label: const Text(
-                'Order Now – Same Day Delivery',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 14,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1A1A2E),
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );

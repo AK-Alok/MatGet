@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577400848756",
+    "project_id": "matget-2510",
+    "storage_bucket": "matget-2510.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577400848756:android:c6f11f9bc3e90005e16c21",
+        "android_client_info": {
+          "package_name": "com.example.matget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcg92KW89hz3WJ4b7dGk0W00fLrWVc2NQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
