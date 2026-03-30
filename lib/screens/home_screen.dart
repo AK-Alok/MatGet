@@ -548,17 +548,17 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 242, 241, 241),
+                    color: const Color.fromARGB(255, 250, 249, 249),
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(color: _divider, width: 1),
-                    // boxShadow: const [
-                    //   BoxShadow(
-                    //     color: Colors.black12,
-                    //     blurRadius: 4,
-                    //     spreadRadius: 0,
-                    //     offset: Offset(0, 1),
-                    //   ),
-                    // ],
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 2,
+                        spreadRadius: 0,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
                   ),
                   child: const TextField(
                     decoration: InputDecoration(
@@ -836,10 +836,10 @@ class HomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
             color: _primaryLight,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: _divider, width: 0.8),
-            // boxShadow: const [
-            //   BoxShadow(color: Colors.black12, blurRadius: 2, offset: Offset(0, 2)),
-            // ],
+            border: Border.all(color: _divider, width: 0.4),
+            boxShadow: const [
+              BoxShadow(color: Colors.black12, blurRadius: 2, offset: Offset(0, 1)),
+            ],
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(14),
@@ -870,9 +870,9 @@ class HomeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: _divider, width: 0.8),
+        border: Border.all(color: _divider, width: 1),
         // boxShadow: const [
-        //   BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
+        //   BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 1)),
         // ],
       ),
       child: Column(
@@ -949,10 +949,10 @@ class HomeScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: _divider, width: 0.8),
-        // boxShadow: const [
-        //   BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
-        // ],
+        border: Border.all(color: _divider, width: 0.4),
+        boxShadow: const [
+          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
+        ],
       ),
       child: Row(
         children: [
