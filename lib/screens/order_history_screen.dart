@@ -46,15 +46,15 @@ class OrderHistoryPage extends StatelessWidget {
     OrderItem(
       orderId: '#10254',
       date: 'Oct 28, 2025',
-      items: '2x Cement Bags, 1x TMT Steel Bar',
-      total: 150.00,
+      items: '2x Cement Bags',
+      total: 950.00,
       status: OrderStatus.delivered,
     ),
     OrderItem(
       orderId: '#10211',
       date: 'Oct 15, 2025',
-      items: '5x Paint Buckets (Asian)',
-      total: 85.50,
+      items: '1x TMT Steel Bar',
+      total: 350,
       status: OrderStatus.cancelled,
     ),
   ];

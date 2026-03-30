@@ -63,25 +63,25 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   final List<_Review> _reviews = const [
     _Review(
-      name: 'Mike Johnson',
+      name: 'Rakesh Kumar',
       rating: 5,
       comment:
           'Excellent quality blocks. Used for our foundation project and they exceeded expectations. Fast delivery too!',
     ),
     _Review(
-      name: 'Sarah Davis',
+      name: 'Sunita Das',
       rating: 4,
       comment:
           'Good product, arrived on time. Packaging could be better but the blocks themselves are solid.',
     ),
     _Review(
-      name: 'Mike Johnson',
+      name: 'Pankaj Mishra',
       rating: 5,
       comment:
           'Excellent quality blocks. Used for our foundation project and they exceeded expectations. Fast delivery too!',
     ),
     _Review(
-      name: 'Sarah Davis',
+      name: 'Anoop Bhatiya',
       rating: 4,
       comment:
           'Good product, arrived on time. Packaging could be better but the blocks themselves are solid.',

@@ -49,33 +49,33 @@ class _MyCartPageState extends State<MyCartPage> {
       id: '1',
       name: 'UltraTech Cement',
       subtitle: '50kg Bag',
-      unitPrice: 7.50,
+      unitPrice: 380.00,
       quantity: 2,
     ),
     CartItem(
       id: '2',
       name: 'TMT Steel Bar',
       subtitle: '12mm, 1 Ton',
-      unitPrice: 135.00,
+      unitPrice: 6500.00,
       quantity: 1,
     ),
     CartItem(
       id: '3',
       name: 'Gravel',
       subtitle: '50kg bag',
-      unitPrice: 60.00,
+      unitPrice: 540.00,
       quantity: 1,
     ),
     CartItem(
       id: '4',
       name: 'River Sand',
       subtitle: '25Kg Bag',
-      unitPrice: 25,
+      unitPrice: 175.00,
       quantity: 1,
     ),
   ];
 
-  static const double _deliveryFee = 5.00;
+  static const double _deliveryFee = 180.00;
 
   double get _subtotal => _items.fold(0, (sum, item) => sum + item.total);
   double get _total => _subtotal + _deliveryFee;
