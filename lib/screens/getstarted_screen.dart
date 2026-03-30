@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/login_screen.dart';
-import 'package:matget/screens/signup_screen.dart';
+import 'package:matget/screens/phone_authentication.dart';
 
 class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({super.key});
@@ -124,7 +124,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (_) => SignUpScreen()),
+                      MaterialPageRoute(builder: (_) => PhoneAuthScreen()),
                     );
                   },
                   child: Container(
