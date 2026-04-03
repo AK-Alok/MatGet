@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:matget/screens/otp_screen.dart';
+import 'package:matget/screens/getstarted_screen.dart';
 
 // ─── Theme Colors ─────────────────────────────────────────────────────────────
 class _C {
@@ -114,6 +115,19 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _C.scaffoldBg,
+      appBar: AppBar(
+        backgroundColor: _C.scaffoldBg,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 18, 18, 57)),
+          onPressed: () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (_) => GetStartedScreen()
+            ),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24),

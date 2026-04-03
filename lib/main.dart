@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:matget/screens/phone_authentication.dart';
-import 'package:matget/screens/main_shell.dart'; 
+import 'package:matget/screens/main_shell.dart';
 import 'package:matget/screens/splash_screen.dart';
 
 void main() async {
@@ -26,13 +26,12 @@ class MyApp extends StatelessWidget {
       ),
 
       // ── Starting screen ──────────────────────────
-      initialRoute: '/splash',   // ← app opens here
-
+      initialRoute: '/splash', // ← app opens here
       // ── All named routes ─────────────────────────
       routes: {
-        '/splash': (_) => const SplashScreen(),  // ← optional splash screen
-        '/login': (_) => const PhoneAuthScreen(),  // ← OTP login
-        '/home':  (_) => const MainShell(),        // ← after login
+        '/splash': (_) => const SplashScreen(), // ← optional splash screen
+        '/login': (_) => const PhoneAuthScreen(), // ← OTP login
+        '/home': (_) => const MainShell(), // ← after login
       },
     );
   }

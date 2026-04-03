@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 // ─── Theme Colors ─────────────────────────────────────────────────────────────
 class _C {
-  static const primary      = Color(0xFFE8541A);
+  static const primary      = Color(0xffff7d3b);
   static const primaryLight = Color(0xFFFFF0EB);
   static const textDark     = Color(0xFF1A1A2E);
   static const textGrey     = Color(0xFF6B7280);

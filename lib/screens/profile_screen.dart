@@ -238,7 +238,7 @@ class ProfilePage extends StatelessWidget {
           _ContactRow(
             icon: Icons.phone_outlined,
             label: 'Phone',
-            value: '+91 5436441684',
+            value: '+91 8318461596',
           ),
           const SizedBox(height: 12),
           // Email
