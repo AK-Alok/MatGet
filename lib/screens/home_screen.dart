@@ -16,31 +16,38 @@ const _starYellow = Color(0xFFFBBF24);
 final List<ShopModel> shops = [
   ShopModel(
     name: "Bharat Hardware Store",
-    location: "Chandpur, India",
+    location: "Chandpur, Bijnor(UP), India",
     image: "assets/images/shop.png",
     rating: 4.8,
     distance: "1.2 km",
   ),
   ShopModel(
-    name: "Sharma Paint & Tools",
-    location: "Bijnor, India",
-    image: "assets/images/shop.png",
-    rating: 4.6,
+    name: "Jindal Hardware Store",
+    location: "Chandpur, Bijnor(UP), India",
+    image: "assets/images/shop4.png",
+    rating: 3.5,
     distance: "2.4 km",
   ),
   ShopModel(
-    name: "Modern Tiles House",
-    location: "Noida, India",
-    image: "assets/images/shop.png",
+    name: "Alpha Glass & Hardware",
+    location: "Bijnor Road chandpur siau, Bijnor(UP), India",
+    image: "assets/images/shop1.png",
     rating: 4.7,
     distance: "3.1 km",
   ),
   ShopModel(
-    name: "Royal Cement Agency",
-    location: "Delhi, India",
-    image: "assets/images/shop.png",
-    rating: 4.9,
-    distance: "900 m",
+    name: "Raeen Paint & Hardware",
+    location: "Chandpur, Bijnor(UP), India",
+    image: "assets/images/shop3.png",
+    rating: 4.7,
+    distance: "2.8 km",
+  ),
+  ShopModel(
+    name: "Garg Plywood & Hardware",
+    location: "Dhanaura Road chandpur, Bijnor(UP), India",
+    image: "assets/images/shop2.png",
+    rating: 3.9,
+    distance: "3.4 km",
   ),
 ];
 
@@ -193,104 +200,116 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: [
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Bricks", "assets/images/Bricks1.png"),
-            ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory(
+                      "Bricks",
+                      "assets/images/Bricks1.png",
+                    ),
+                  ),
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Sand", "assets/images/sand1.png"),
-            ),
-                  
-                  const SizedBox(width: 14),
-                InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Cement", "assets/images/Cement1.png"),
-            ),
-                  
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory("Sand", "assets/images/sand1.png"),
+                  ),
+
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("TMT Bar", "assets/images/Steel1.png"),
-            ),
-                  
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory(
+                      "Cement",
+                      "assets/images/Cement1.png",
+                    ),
+                  ),
+
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Gravel", "assets/images/gravel1.png")
-            ),
-                  
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory(
+                      "TMT Bar",
+                      "assets/images/Steel1.png",
+                    ),
+                  ),
+
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Paints", "assets/images/paints.png")
-            ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory(
+                      "Gravel",
+                      "assets/images/gravel1.png",
+                    ),
+                  ),
+
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Pipes", "assets/images/pipes.png"),
-            ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory("Paints", "assets/images/paints.png"),
+                  ),
                   const SizedBox(width: 14),
                   InkWell(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
-              ),
-              splashColor: Colors.black12,
-              highlightColor: Colors.black12,
-              hoverColor: Colors.black12,
-              borderRadius: BorderRadius.circular(12),
-              child: _buildCategory("Tools", "assets/images/tools.png"),
-            ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory("Pipes", "assets/images/pipes.png"),
+                  ),
+                  const SizedBox(width: 14),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+                    ),
+                    splashColor: Colors.black12,
+                    highlightColor: Colors.black12,
+                    hoverColor: Colors.black12,
+                    borderRadius: BorderRadius.circular(12),
+                    child: _buildCategory("Tools", "assets/images/tools.png"),
+                  ),
                 ],
               ),
             ),
@@ -441,10 +460,20 @@ class HomeScreen extends StatelessWidget {
               highlightColor: Colors.black12,
               hoverColor: Colors.black12,
               borderRadius: BorderRadius.circular(12),
-              child: _buildShopCard(shops[3] ),
+              child: _buildShopCard(shops[3]),
             ),
             const SizedBox(height: 12),
-           // _buildShopCard(shops[4] ),
+            InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ShopDetailsPage()),
+              ),
+              splashColor: Colors.black12,
+              highlightColor: Colors.black12,
+              hoverColor: Colors.black12,
+              borderRadius: BorderRadius.circular(12),
+              child: _buildShopCard(shops[4]),
+            ),
 
             const SizedBox(height: 30),
           ],
@@ -493,7 +522,11 @@ class HomeScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: _divider, width: 0.4),
             boxShadow: const [
-              BoxShadow(color: Colors.black12, blurRadius: 2, offset: Offset(0, 1)),
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 2,
+                offset: Offset(0, 1),
+              ),
             ],
           ),
           child: ClipRRect(
@@ -597,177 +630,87 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // ── Shop Card ──────────────────────────────────────────────────────────────
-  // Widget _buildShopCard() {
-  //   return Container(
-  //     padding: const EdgeInsets.all(12),
-  //     decoration: BoxDecoration(
-  //       color: Colors.white,
-  //       borderRadius: BorderRadius.circular(14),
-  //       border: Border.all(color: _divider, width: 0.4),
-  //       boxShadow: const [
-  //         BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
-  //       ],
-  //     ),
-  //     child: Row(
-  //       children: [
-  //         ClipRRect(
-  //           borderRadius: BorderRadius.circular(12),
-  //           child: Image.asset(
-  //             "assets/images/shop.png",
-  //             width: 80,
-  //             height: 80,
-  //             fit: BoxFit.cover,
-  //           ),
-  //         ),
-  //         const SizedBox(width: 14),
-  //         Expanded(
-  //           child: Column(
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //             children: [
-  //               const Text(
-  //                 "Bharat Hardware Store",
-  //                 style: TextStyle(
-  //                   fontSize: 15,
-  //                   fontWeight: FontWeight.w700,
-  //                   color: _textDark,
-  //                 ),
-  //               ),
-  //               const SizedBox(height: 3),
-  //               const Text(
-  //                 "Chandpur, India",
-  //                 style: TextStyle(fontSize: 13, color: _textGrey),
-  //               ),
-  //               const SizedBox(height: 8),
-  //               Row(
-  //                 children: const [
-  //                   Icon(Icons.star, size: 15, color: _starYellow),
-  //                   SizedBox(width: 4),
-  //                   Text(
-  //                     "4.8",
-  //                     style: TextStyle(
-  //                       fontSize: 13,
-  //                       fontWeight: FontWeight.w600,
-  //                       color: _textDark,
-  //                     ),
-  //                   ),
-  //                   SizedBox(width: 12),
-  //                   Icon(Icons.location_on, size: 14, color: _primary),
-  //                   SizedBox(width: 2),
-  //                   Text(
-  //                     "1.2 km",
-  //                     style: TextStyle(fontSize: 12, color: _textGrey),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ],
-  //           ),
-  //         ),
-  //         // const Icon(Icons.chevron_right, color: _textLight, size: 20),
-  //       ],
-  //     ),
-  //   );
-  // }
-
   // ── Shop Card Widget ────────────────────────────────────────────────────────
-Widget _buildShopCard(ShopModel shop) {
-  return Container(
-    margin: const EdgeInsets.only(bottom: 14),
-    padding: const EdgeInsets.all(12),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(14),
-      border: Border.all(color: _divider, width: 0.4),
-      boxShadow: const [
-        BoxShadow(
-          color: Colors.black12,
-          blurRadius: 6,
-          offset: Offset(0, 4),
-        ),
-      ],
-    ),
-    child: Row(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(
-            shop.image,
-            width: 80,
-            height: 80,
-            fit: BoxFit.cover,
+  Widget _buildShopCard(ShopModel shop) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 14),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: _divider, width: 0.4),
+        boxShadow: const [
+          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
+        ],
+      ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              shop.image,
+              width: 80,
+              height: 80,
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
 
-        const SizedBox(width: 14),
+          const SizedBox(width: 14),
 
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                shop.name,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: _textDark,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  shop.name,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: _textDark,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              Text(
-                shop.location,
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: _textGrey,
+                Text(
+                  shop.location,
+                  style: const TextStyle(fontSize: 13, color: _textGrey),
                 ),
-              ),
 
-              const SizedBox(height: 8),
+                const SizedBox(height: 8),
 
-              Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    size: 15,
-                    color: _starYellow,
-                  ),
+                Row(
+                  children: [
+                    const Icon(Icons.star, size: 15, color: _starYellow),
 
-                  const SizedBox(width: 4),
+                    const SizedBox(width: 4),
 
-                  Text(
-                    shop.rating.toString(),
-                    style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: _textDark,
+                    Text(
+                      shop.rating.toString(),
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: _textDark,
+                      ),
                     ),
-                  ),
 
-                  const SizedBox(width: 12),
+                    const SizedBox(width: 12),
 
-                  const Icon(
-                    Icons.location_on,
-                    size: 14,
-                    color: _primary,
-                  ),
+                    const Icon(Icons.location_on, size: 14, color: _primary),
 
-                  const SizedBox(width: 2),
+                    const SizedBox(width: 2),
 
-                  Text(
-                    shop.distance,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: _textGrey,
+                    Text(
+                      shop.distance,
+                      style: const TextStyle(fontSize: 12, color: _textGrey),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
 }
