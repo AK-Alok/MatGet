@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:matget/screens/login_screen.dart';
+import 'package:matget/screens/main_shell.dart';
 import 'package:matget/screens/phone_authentication.dart';
+import 'package:matget/services/auth_service.dart';
+import 'package:matget/screens/signup_screen.dart';
+
+final AuthService _authService = AuthService();
 
 class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({super.key});
@@ -65,8 +70,21 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                 SizedBox(
                   width: 300,
                   child: PressableButton(
-                    onTap: () {
-                      print("Google Sign Up");
+                    onTap: () async {
+                      final user = await _authService.signInWithGoogle();
+
+                      if (user != null) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => MainShell()),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Google Sign-In Failed"),
+                          ),
+                        );
+                      }
                     },
                     child: _socialButton(
                       icon: "assets/icons/google.png",
@@ -77,16 +95,19 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 
                 const SizedBox(height: 20),
 
-                // ---------- APPLE BUTTON ----------
+                // ---------- EMAIL BUTTON ----------
                 SizedBox(
                   width: 300,
                   child: PressableButton(
                     onTap: () {
-                      print("Apple Sign Up");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => SignUpScreen()),
+                      );
                     },
                     child: _socialButton(
-                      icon: "assets/icons/apple.png",
-                      text: "Sign Up with Apple",
+                      icon: "assets/icons/email.png",
+                      text: "Sign Up with Email",
                     ),
                   ),
                 ),
