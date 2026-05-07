@@ -661,11 +661,41 @@ class HomeScreen extends StatelessWidget {
             ),
                   
                   const SizedBox(width: 14),
-                  _buildCategory("Paint", "assets/images/gravel1.png"),
+                  InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+              ),
+              splashColor: Colors.black12,
+              highlightColor: Colors.black12,
+              hoverColor: Colors.black12,
+              borderRadius: BorderRadius.circular(12),
+              child: _buildCategory("Paints", "assets/images/paints.png")
+            ),
                   const SizedBox(width: 14),
-                  _buildCategory("Pipes", "assets/images/gravel1.png"),
+                  InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+              ),
+              splashColor: Colors.black12,
+              highlightColor: Colors.black12,
+              hoverColor: Colors.black12,
+              borderRadius: BorderRadius.circular(12),
+              child: _buildCategory("Pipes", "assets/images/pipes.png"),
+            ),
                   const SizedBox(width: 14),
-                  _buildCategory("Tools", "assets/images/gravel1.png"),
+                  InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => ProductDetailsPage()),
+              ),
+              splashColor: Colors.black12,
+              highlightColor: Colors.black12,
+              hoverColor: Colors.black12,
+              borderRadius: BorderRadius.circular(12),
+              child: _buildCategory("Tools", "assets/images/tools.png"),
+            ),
                 ],
               ),
             ),
