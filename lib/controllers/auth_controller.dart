@@ -31,4 +31,9 @@ class AuthController {
 
     return user != null;
   }
+
+  Future<bool> resetPassword(String email) async {
+  return await _authService
+      .sendPasswordResetEmail(email);
+}
 }

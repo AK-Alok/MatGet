@@ -18,7 +18,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController passwordController = TextEditingController();
 
   final AuthController _authController = AuthController();
-  
 
   @override
   Widget build(BuildContext context) {
@@ -222,15 +221,192 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 Expanded(
                   child: RichText(
-                    text: const TextSpan(
-                      style: TextStyle(color: Colors.black87, fontSize: 15),
+                    text: TextSpan(
+                      style: const TextStyle(
+                        color: Colors.black87,
+                        fontSize: 15,
+                      ),
+
                       children: [
-                        TextSpan(text: "I agree to the "),
-                        TextSpan(
-                          text: "Terms and Conditions",
-                          style: TextStyle(
-                            color: Color(0xFFE8541A),
-                            fontWeight: FontWeight.w600,
+                        const TextSpan(text: "I agree to the "),
+
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+
+                          child: GestureDetector(
+                            onTap: () {
+                              showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(28),
+                                  ),
+                                ),
+
+                                builder: (context) {
+                                  return DraggableScrollableSheet(
+                                    expand: false,
+                                    initialChildSize: 0.85,
+                                    minChildSize: 0.5,
+                                    maxChildSize: 0.95,
+
+                                    builder: (_, controller) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 22,
+                                          vertical: 18,
+                                        ),
+
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+
+                                          children: [
+                                            // TOP BAR
+                                            Center(
+                                              child: Container(
+                                                width: 50,
+                                                height: 5,
+
+                                                decoration: BoxDecoration(
+                                                  color: Colors.grey.shade300,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                ),
+                                              ),
+                                            ),
+
+                                            const SizedBox(height: 22),
+
+                                            // TITLE
+                                            const Text(
+                                              "Terms & Conditions",
+
+                                              style: TextStyle(
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.w700,
+                                                color: Color(0xff1a2238),
+                                              ),
+                                            ),
+
+                                            const SizedBox(height: 8),
+
+                                            const Text(
+                                              "Please read and accept before creating your account.",
+
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+
+                                            const SizedBox(height: 24),
+
+                                            // CONTENT
+                                            Expanded(
+                                              child: SingleChildScrollView(
+                                                controller: controller,
+
+                                                child: const Text(
+                                                  '''
+1. Account Information
+Users must provide accurate and complete registration details while creating an account on MatGet.
+
+2. Platform Usage
+MatGet is designed for purchasing construction and building materials including cement, bricks, steel rods, sand, gravel, paint, pipes, tools, and related products.
+
+3. Orders & Pricing
+Product prices, stock availability, delivery charges, and offers may change without prior notice.
+
+4. Payment Terms
+Payments must be completed using approved payment methods available within the application.
+
+5. Delivery & Logistics
+Delivery timelines are estimated and may vary depending on supplier availability, traffic conditions, weather, or operational limitations.
+
+6. User Responsibility
+Users are responsible for checking product quantity, specifications, pricing, and delivery address before placing an order.
+
+7. Privacy & Security
+Your personal information is securely stored and used only for authentication, order processing, support services, and improving user experience.
+
+8. Restricted Activities
+Fraudulent activity, misuse of the platform, fake orders, or abusive behavior may result in suspension or permanent termination of the account.
+
+9. Updates to Terms
+MatGet reserves the right to update or modify these Terms & Conditions at any time without prior notice.
+
+10. Acceptance
+By creating an account and continuing to use MatGet, you acknowledge and accept all Terms & Conditions stated above.
+''',
+
+                                                  style: TextStyle(
+                                                    fontSize: 15,
+                                                    height: 1.7,
+                                                    color: Colors.black87,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+
+                                            const SizedBox(height: 18),
+
+                                            // BUTTON
+                                            SizedBox(
+                                              width: double.infinity,
+
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+
+                                                style: ElevatedButton.styleFrom(
+                                                  backgroundColor: const Color(
+                                                    0xffff7d3b,
+                                                  ),
+
+                                                  padding:
+                                                      const EdgeInsets.symmetric(
+                                                        vertical: 16,
+                                                      ),
+
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                          14,
+                                                        ),
+                                                  ),
+                                                ),
+
+                                                child: const Text(
+                                                  "I Understand",
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            },
+
+                            child: const Text(
+                              "Terms and Conditions",
+
+                              style: TextStyle(
+                                color: Color(0xFFE8541A),
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
                           ),
                         ),
                       ],

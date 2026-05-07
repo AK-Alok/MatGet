@@ -8,8 +8,7 @@ class AuthService {
   Future<User?> signInWithGoogle() async {
     try {
       // Step 1: Select Google account
-      final GoogleSignInAccount? googleUser =
-          await _googleSignIn.signIn();
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
       if (googleUser == null) return null;
 
@@ -24,8 +23,7 @@ class AuthService {
       );
 
       // Step 4: Sign in with Firebase
-      final userCredential =
-          await _auth.signInWithCredential(credential);
+      final userCredential = await _auth.signInWithCredential(credential);
 
       return userCredential.user;
     } catch (e) {
@@ -40,11 +38,9 @@ class AuthService {
   }
 
   // SIGN UP
-  Future<User?> signUpWithEmail(
-      String email, String password) async {
+  Future<User?> signUpWithEmail(String email, String password) async {
     try {
-      final result = await _auth
-          .createUserWithEmailAndPassword(
+      final result = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -57,11 +53,9 @@ class AuthService {
   }
 
   // LOGIN
-  Future<User?> loginWithEmail(
-      String email, String password) async {
+  Future<User?> loginWithEmail(String email, String password) async {
     try {
-      final result = await _auth
-          .signInWithEmailAndPassword(
+      final result = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -73,10 +67,20 @@ class AuthService {
     }
   }
 
+  Future<bool> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+
+      return true;
+    } catch (e) {
+      print("Reset Password Error: $e");
+
+      return false;
+    }
+  }
+
   // LOGOUT
   Future<void> logout() async {
     await _auth.signOut();
   }
 }
-  
-
